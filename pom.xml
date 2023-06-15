@@ -18,7 +18,7 @@
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <native.maven.plugin.version>0.9.22</native.maven.plugin.version>
-        <main.class.name>ch.qos.MinimalApp</main.class.name>
+        <main.class.name>ch.qos.App</main.class.name>
     </properties>
 
     <dependencies>
