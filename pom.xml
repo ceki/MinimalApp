@@ -5,11 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ch.qos</groupId>
-    <artifactId>Minimal</artifactId>
+    <artifactId>minimal</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Hello</name>
-    <!-- FIXME change it to the project's website -->
+    <name>minimal</name>
     <url>http://minimal.qos.ch</url>
 
     <properties>
@@ -126,12 +125,16 @@
                         <configuration>
                             <mainClass>${main.class.name}</mainClass>
                             <metadataRepository>
-                                <enabled>true</enabled>
+                                <enabled>false</enabled>
                             </metadataRepository>
                             <buildArgs>
+                                <buildArg>--verbose</buildArg>
+                                <buildArg>-Ob</buildArg>
+                                <buildArg>-H:ServiceLoaderFeatureExcludeServices=xxx</buildArg>
                                 <buildArg>-H:+PrintAnalysisCallTree</buildArg>
-                                <buildArg>-H:ReportAnalysisForbiddenType=org.xml.sax</buildArg>
-                                <buildArg>-H:ReportAnalysisForbiddenType=java.xml</buildArg>
+                                <buildArg>-H:ReportAnalysisForbiddenType=xorg.xml.sax.helpers.XMLReaderFactory</buildArg>
+                                <buildArg>-H:ReportAnalysisForbiddenType=xch.qos.logback.classic.joran.JoranConfigurator</buildArg>
+                                <buildArg>-H:ReportAnalysisForbiddenType=xch.qos.logback.classic.joran.ReconfigureOnChangeTask</buildArg>
                                 <!--<buildArg>XXinitialize-at-build-time=org.slf4j.LoggerFactory,ch.qos.logback</buildArg>-->
                             </buildArgs>
                         </configuration>
