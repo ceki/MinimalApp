@@ -1,15 +1,46 @@
 <!DOCTYPE configuration>
 
-<configuration debug="true">
+<configuration>
 
+
+    <!--<serializeModel file="${logback_smo_target}"/> -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date %level - %m%n</pattern>
         </encoder>
     </appender>
 
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>target/infoLog.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>target/infoLogs.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="com.sun.mail.handlers.TextXmlTest" level="INFO"/>
+    <logger name="org.apache.maven.model.management.DefaultDependencyManagementInjector" level="INFO"/>
+    <logger name="org.apache.maven.repository.metadata.MetadataResolutionResult" level="INFO"/>
+    <logger name="org.apache.felix.cm.impl.RequiredConfigurationPluginTracker" level="INFO"/>
+    <logger name="org.apache.felix.webconsole.plugins.event.internal.OptionalFeaturesHandler" level="INFO"/>
+    <logger name="ch.qos.logback.access.jetty.JettyServerAdapter" level="INFO" />
+
     <root level="DEBUG">
         <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+
     </root>
 
 </configuration>
