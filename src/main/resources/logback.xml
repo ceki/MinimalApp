@@ -3,7 +3,7 @@
 <configuration>
 
 
-    <!--<serializeModel file="${logback_smo_target}"/> -->
+<!--    <serializeModel file="${logback_scmo_target}"/>-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date %level - %m%n</pattern>

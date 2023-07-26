@@ -1,0 +1,15 @@
+[
+  {
+    "name":"ch.qos.logback.classic.joran.SerializedModelConfigurator"
+  },
+  {
+    "name":"ch.qos.logback.core.rolling.helper.DateTokenConverter"
+  },
+
+  {
+    "name":"ch.qos.logback.classic.util.DefaultJoranConfigurator",
+    "condition": {
+      "typeReachable": "ch.qos.logback.classic.joran.JoranConfigurator"
+    }
+  }
+]

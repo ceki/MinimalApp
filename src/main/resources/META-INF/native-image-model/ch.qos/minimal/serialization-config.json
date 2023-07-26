@@ -1,0 +1,23 @@
+{
+  "types": [
+    {
+      "name": "ch.qos.logback.classic.model.ConfigurationModel"
+    },
+    {
+      "name": "ch.qos.logback.classic.model.LoggerModel"
+    },
+    {
+      "name": "ch.qos.logback.core.model.Model"
+    },
+    {
+      "name": "ch.qos.logback.core.model.SerializeModelModel"
+    },
+    {
+      "name": "java.util.ArrayList"
+    }
+  ],
+  "lambdaCapturingTypes": [
+  ],
+  "proxies": [
+  ]
+}

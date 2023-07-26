@@ -8,11 +8,12 @@ import org.slf4j.LoggerFactory;
  */
 public class App {
 
-    static Logger LOGGER = LoggerFactory.getLogger(App.class);
-
     public static void main(String[] args) {
-
+        System.setProperty("logback_scmo_target", "config-scmo/logback.scmo");
+        System.setProperty("logback.serializedModelFilew", "config-scmo/logback.scmo");
+        Logger LOGGER = LoggerFactory.getLogger(App.class);
         LOGGER.info("test");
         System.out.println("Hello World!");
     }
+
 }
